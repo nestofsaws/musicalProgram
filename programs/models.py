@@ -15,7 +15,8 @@ class Artist (models.Model):
         return U'%s %s' %(self.last_name, self.id) 
 
 class Song(models.Model):
-    title = models.CharField(unique=True, max_length=50)
+    title = models.CharField(unique=False, max_length=50)
+    songid = models.CharField(unique = True, max_length=12, default='')
     key = models.CharField(unique=False, max_length=50, null=True)
     language = models.CharField(unique=False, max_length=50, null=True)
     date = models.CharField(unique=False, max_length=50, null=True)
