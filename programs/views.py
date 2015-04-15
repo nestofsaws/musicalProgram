@@ -2,27 +2,27 @@
 from django.shortcuts import render, get_object_or_404#, redirect_render_to_response
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
-from programs.models import Song, Artist
+from . import models
 
 def home(request):
     context = {
-        'artist_count': Artist.objects.count(),
-        'song_count': Song.objects.count(),
+        'artist_count': models.Artist.objects.count(),
+        'song_count': models.Song.objects.count(),
     }
     return render(request, 'programs/home.html', context)
 
-def song(request, pk):
-    song = get_object_or_404(Song, id=pk)
-    return render(request, 'programs/song.html', {'song': song})
+def song_detail(request, pk):
+    song = get_object_or_404(models.Song, id=pk)
+    return render(request, 'programs/song_detail.html', {'song': song})
 
-def artist(request, pk):
-    artist = get_object_or_404(Artist, id=pk)
-    return render(request, 'programs/artist.html', {'artist': artist})
+def artist_detail(request, pk):
+    artist = get_object_or_404(models.Artist, id=pk)
+    return render(request, 'programs/artist_detail.html', {'artist': artist})
     
-def songList(request):
-    song_list = Song.objects.all()
-    return render(request, 'programs/song_list.html', {'songs': song_list})
+def song_listing(request):
+    songs = models.Song.objects.all()
+    return render(request, 'programs/song_listing.html', {'songs': songs})
 
-def artistList(request):
-    artist_list = Artist.objects.all()
-    return render(request, 'programs/artist_list.html', {'artists': artist_list})
+def artist_listing(request):
+    artists = models.Artist.objects.all()
+    return render(request, 'programs/artist_listing.html', {'artists': artists})

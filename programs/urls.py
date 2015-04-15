@@ -1,11 +1,11 @@
 from django.conf.urls import patterns, url
 
-from programs import views
+from . import views
 
 urlpatterns = patterns('',
-    url(r'^$', views.home, name='programs_home'),
-    url(r'^song/$', views.songList, name='programs_song_list'),
-    url(r'^artist/$', views.artistList, name='programs_artist_list'),
-    url(r'^song/(?P<pk>\d+)$', views.song, name='programs_song'),
-    url(r'^artist/(?P<pk>\d+)$', views.artist, name='programs_artist'),
+    url(r'^$', views.home, name='home'),
+    url(r'^songs/$', views.song_listing, name='song_listing'),
+    url(r'^artists/$', views.artist_listing, name='artist_listing'),
+    url(r'^songs/(?P<pk>\d+)$', views.song_detail, name='song_detail'),
+    url(r'^artists/(?P<pk>\d+)$', views.artist_detail, name='artist_detail'),
 )
