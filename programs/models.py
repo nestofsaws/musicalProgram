@@ -5,7 +5,6 @@ from django.utils import timezone
 class Artist (models.Model):
     first_name = models.CharField(unique=False, max_length=50)
     last_name = models.CharField(unique=False, max_length=50)    
-    artistid = models.CharField(unique = True, max_length=12)
     url = models.CharField(unique=True, max_length=200, null=True)
   
     class Meta(object):
@@ -16,7 +15,6 @@ class Artist (models.Model):
 
 class Song(models.Model):
     title = models.CharField(unique=False, max_length=50)
-    songid = models.CharField(unique = True, max_length=12, default='')
     key = models.CharField(unique=False, max_length=50, null=True)
     language = models.CharField(unique=False, max_length=50, null=True)
     date = models.CharField(unique=False, max_length=50, null=True)
