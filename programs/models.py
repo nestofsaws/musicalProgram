@@ -5,7 +5,7 @@ class Artist(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)    
     url = models.URLField(null=True, blank=True)
-  
+
     class Meta(object):
         ordering = ('last_name', 'first_name')
 
@@ -19,7 +19,7 @@ class Song(models.Model):
     language = models.CharField(max_length=50, null=True, blank=True)
     composed_on = models.IntegerField(max_length=4, null=True, blank=True)
     performers = models.ManyToManyField('Artist', null=True, blank=True)
-
+  
     class Meta(object):
         ordering = ('title',)
 
