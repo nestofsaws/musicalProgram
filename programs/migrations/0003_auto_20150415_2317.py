@@ -7,7 +7,7 @@ from django.db import models, migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('programs', '0002_auto_20150411_2119'),
+        ('programs', '0003_auto_20150415_1908'),
     ]
 
     operations = [
@@ -21,10 +21,6 @@ class Migration(migrations.Migration):
             new_name='performers',
         ),
         migrations.RemoveField(
-            model_name='artist',
-            name='artistid',
-        ),
-        migrations.RemoveField(
             model_name='song',
             name='date',
         ),
@@ -35,10 +31,6 @@ class Migration(migrations.Migration):
         migrations.RemoveField(
             model_name='song',
             name='instrumentation',
-        ),
-        migrations.RemoveField(
-            model_name='song',
-            name='songid',
         ),
         migrations.AddField(
             model_name='song',
