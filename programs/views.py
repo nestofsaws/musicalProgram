@@ -26,3 +26,4 @@ def song_listing(request):
 def artist_listing(request):
     artists = models.Artist.objects.all()
     return render(request, 'programs/artist_listing.html', {'artists': artists})
+
