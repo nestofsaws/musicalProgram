@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="panel panel-warning">
+				<div class='panel-heading'><h3>Program Detail</h3></div>
+				<div class='panel-body'>
+					{{ title }}<br />
+					{{ program.location }}<br />
+					{{ program.date }}<br />
+					{% for performer in program.performer_set.all %}
+						{{ performer.artist.first_name }} {{ performer.artist.last_name }}: {{ performer.role }}<br />
+					{% endfor %} 
+					{% for song in program.songs.all %}
+						{{ song }} {{ composer }}<br />
+					{% endfor %} 
+				</div> <!-- end panel body -->	
+        	</div> <!-- end panel -->
+		</div> <!-- end column -->
+	</div> <!-- end row -->	
+
+{% endblock %}

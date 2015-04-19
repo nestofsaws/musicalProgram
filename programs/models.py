@@ -32,7 +32,23 @@ class Program(models.Model):
     title = models.CharField(max_length=75)
     location = models.CharField(max_length=100)
     date = models.DateField(null=True, blank=True)
-    artist = models.ManyToManyField('Artist', null=True, blank=True)
-    secondary_artist = models.CharField(max_length=100, null=True, blank=True)
+    performers = models.ManyToManyField('Artist', through='Performer')
     songs = models.ManyToManyField('Song', null=False, blank=False)
 
+    class Meta(object):
+        ordering = ('date', 'title',)
+
+    def __str__(self):
+        return self.title
+
+class Performer(models.Model):
+    artist = models.ForeignKey('Artist')
+    program = models.ForeignKey('Program')
+    role = models.CharField(max_length=100, null=True, blank=True)
+    order = models.IntegerField(default=0)
+
+    class Meta(object):
+        ordering = ('program', 'order',)
+
+    def __str__(self):
+        return '%s: %s' % (self.artist, self.program)

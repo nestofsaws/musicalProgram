@@ -31,6 +31,6 @@ def program_listing(request):
     programs = models.Program.objects.all()
     return render(request, 'programs/program_listing.html', {'programs': programs})
 
-def program_detail(request):
+def program_detail(request, pk):
     program = get_object_or_404(models.Program, id=pk)
     return render(request, 'programs/program_detail.html', {'program': program})
