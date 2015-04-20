@@ -13,7 +13,9 @@
 				
 				<div class='panel-body'>
 				<!--&nbsp;&nbsp;{{ player.name }} has guernsey number {{ player.number }} and he is a {{ player.position }}. -->
-				&nbsp;&nbsp;{{ artist.first_name }}'s website is <a href='http://{{ artist.url }}'>{{ artist.url }}</a>  
+				
+				
+				{% if artist.url %}&nbsp;&nbsp;{{ artist.first_name }}'s website is <a href='{{ artist.url }}'>{{ artist.url }}</a>{% else %}&nbsp;&nbsp;{{ artist.first_name }} hasn't uploaded a website yet.{% endif %}   
 				<table class="table table-bordered table-striped table-hover">
 						  	<thead>
 							<tr>
