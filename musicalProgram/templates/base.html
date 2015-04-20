@@ -23,7 +23,6 @@
     <link href='http://fonts.googleapis.com/css?family=Playfair+Display+SC' rel='stylesheet' type='text/css'>
 </head>
     <body>
-    <body ng-app>
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -32,8 +31,10 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <!--<a class="navbar-brand" href="/"  ><img style="max-width:150px; margin-top: -10px;"
-             src="{% static "#.png" %}"></a>-->
+      <a class="navbar-brand" href="{% url 'home' %}">Rep Picker
+      
+      <!--<img style="max-width:150px; margin-top: -10px;" src="{% static "#.png" %}">-->
+      </a>
     </div>
     <div id="navbar" class="collapse navbar-collapse">   
       <ul class="nav navbar-nav navbar-right">
@@ -41,7 +42,7 @@
     </div>
   </div>
 </nav>
-<h1><a href="{% url 'home' %}">RepPicker</a></h1>
+
     <div class='container'>
 		{% block content %}{% endblock %}
 	</div>        
