@@ -1,15 +1,31 @@
 {% extends "base.html" %}
-
+{% load staticfiles %}
 {% block content %}
-	<div class="row">
-		<div class="col-xs-12">
+	<div class="cd-fixed-bg cd-bg-1 div-wrapper">
+		 <div class="container">
+			<div class='jumbotron'>
+				<p class='profile text-center'>Song Detail</p>
+			</div>
+		</div>
+        <img alt="Circle content" class="circle_image img-responsive" src="{% static 'index.png' %}" />
+		<p class='big_title'>{{ song }}</p>
+	</div> 
+	<div class="container">
+		<div class="cd-scrolling-bg cd-color-2">
 			<div class="panel panel-warning">
-				<div class='panel-heading'><h3>Song Detail</h3></div>
-				<div class='panel-body'>
-					{{ song }} {{ song.key }} {{ song.language }} {{ song.composed_on }} {{ song.performers.all }}
-				</div> <!-- end panel body -->	
-        	</div> <!-- end panel -->
-		</div> <!-- end column -->
-	</div> <!-- end row -->	
-
+        		<div class="panel-heading"><strong>Song Title: </strong>{{ song }}</div>
+				<div class="panel-body">
+					<strong>Key: </strong>{{ song.key }}<br />
+					<strong>Language: </strong>{{ song.language }}<br />
+					<strong>Composition Date: </strong>{{song.composed_on }}<br />
+					<strong>Composer: </strong>{{ song.composer }}<br/>		
+    			</div>
+    	</div>
+		<p>This is more information about {{ song }}. 
+		Maybe a short bio or description stored in the DB.
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore incidunt suscipit similique, 
+		dolor corrupti cumque qui consectetur autem laborum fuga quas ipsam doloribus sequi...
+		</p>
+	</div> 
+</div> 
 {% endblock %}

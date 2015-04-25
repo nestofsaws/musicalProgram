@@ -1,23 +1,38 @@
 {% extends "base.html" %}
+{% load staticfiles %}
 
 {% block content %}
-	<div class="row">
-		<div class="col-xs-12">
+	<div class="cd-fixed-bg cd-bg-1 div-wrapper">
+		 <div class="container">
+			<div class='jumbotron'>
+				<p class='profile text-center'>Program Detail</p>
+			</div>
+		</div>
+        <img alt="Circle content" class="circle_image img-responsive" src="{% static 'index.png' %}" />
+		<p class='big_title'>{{ program.title }}</p>
+	</div> 
+	<div class="container">
+		<div class="cd-scrolling-bg cd-color-2">
 			<div class="panel panel-warning">
-				<div class='panel-heading'><h3>Program Detail</h3></div>
-				<div class='panel-body'>
-					{{ title }}<br />
-					{{ program.location }}<br />
-					{{ program.date }}<br />
-					{% for performer in program.performer_set.all %}
-						{{ performer.artist.first_name }} {{ performer.artist.last_name }}: {{ performer.role }}<br />
+        		<div class="panel-heading"><strong>Program Title: </strong>{{ program.title }}</div>
+				<div class="panel-body">
+					<strong>Location: </strong>{{ program.location }}<br />
+					<strong>Date: </strong>{{ program.date }}<br />
+					<strong>Performer(s) and Role(s): </strong><br>{% for performer in program.performer_set.all %}
+						&nbsp;&nbsp;-{{ performer.artist.first_name }} {{ performer.artist.last_name }}: {{ performer.role }}<br>
 					{% endfor %} 
-					{% for song in program.songs.all %}
-						{{ song }} {{ composer }}<br />
-					{% endfor %} 
-				</div> <!-- end panel body -->	
-        	</div> <!-- end panel -->
-		</div> <!-- end column -->
-	</div> <!-- end row -->	
+					<strong>Program Songs: </strong><br>{% for song in program.songs.all %}
+						&nbsp;&nbsp;<strong>Title: </strong><a href="/songs/{{ song.id }}">{{ song.title }}</a><br>
+						&nbsp;&nbsp;<strong>Composer: </strong>{{ song.composer }}<br><br>
+					{% endfor %}
+    			</div>
+    	</div>
+		<p>This is more information about {{ program.title }} from {{ program.date }}. 
+		Maybe a short bio or description stored in the DB.
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore incidunt suscipit similique, 
+		dolor corrupti cumque qui consectetur autem laborum fuga quas ipsam doloribus sequi...
+		</p>
+	</div> 
+</div> 
 
 {% endblock %}

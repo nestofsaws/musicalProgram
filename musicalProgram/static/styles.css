@@ -30,7 +30,7 @@ body, html, main {
 }
  
 .cd-fixed-bg.cd-bg-1 {
-	background-image: url("organ.jpg");
+	background-image: url("symphonyhall_xs.jpg");
   
 }
 .cd-fixed-bg.cd-bg-2 {
@@ -38,6 +38,10 @@ body, html, main {
 	min-height: 40%;
 }
 
+.cd-fixed-bg.cd-bg-3 {
+	background-image: url("organ.jpg");
+	min-height: 50%;
+}
 .cd-scrolling-bg {
 	min-height: 100%;
 	background-color: #fff;
@@ -122,7 +126,7 @@ body, html, main {
 		min-height: 105%;
 	}
 	.cd-fixed-bg.cd-bg-1 {
-		background-image: url("organ.jpg");
+		background-image: url("symphonyhall.jpg");
 	}
 }
 
