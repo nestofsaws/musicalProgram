@@ -1,5 +1,151 @@
-body {
+body, html, main {
 
-	color: #56A0d3;
+	height: 100%;
+	font-family: 'Lora', serif;
+	min-height: 500px;
+}
+
+.navbar-header > .navbar-brand {
+	font-family: 'Niconne', cursive;
+	font-size: 240%;
+	color: purple;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+	color: purple;
 
 }
+.navbar-default {
+	-webkit-box-shadow: 0 8px 6px -6px black;
+	   -moz-box-shadow: 0 8px 6px -6px black;
+	        box-shadow: 0 8px 6px -6px black;
+}
+.cd-fixed-bg {
+	min-height: 65%;
+	background-size: cover;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: bottom;
+	margin-top: 50px;
+}
+ 
+.cd-fixed-bg.cd-bg-1 {
+	background-image: url("organ.jpg");
+  
+}
+.cd-fixed-bg.cd-bg-2 {
+	background-image: url("sheetmusic_xs.jpg");
+	min-height: 40%;
+}
+
+.cd-scrolling-bg {
+	min-height: 100%;
+	background-color: #fff;
+	margin-top: 20px;
+}
+
+.div-wrapper {
+    position: relative;
+}
+
+.div-wrapper img.circle_image {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+
+.jumbotron {
+	margin-top: 60px;
+	background-color: #fff;
+	opacity: 0.8;
+	border-bottom: 4px solid #000000;
+	-webkit-box-shadow: -2px -2px 3px rgba(255,255,255,.5);
+	-moz-box-shadow: -2px -2px 3px rgba(255,255,255,.5);
+	box-shadow: -2px -2px 3px rgba(255,255,255,.5);
+ 
+}
+
+.jumbotron p {
+	color: purple;
+	font-family: 'Niconne', cursive;
+	font-size: 400%;
+	font-weight: 200;
+	text-shadow: 1px 1px 1px rgba(0,0,0,1);
+	line-height:50px;
+	opacity: 0.99 !important;
+	
+}
+
+
+ p.big_title {
+ 	color: #000;
+	font-family: 'Niconne', cursive;
+	position: absolute; 
+	font-size: 250%;
+	top: 95%;
+	left: 50%;
+	transform: translate(-50%, -95%);
+	text-shadow: 1px 1px 1px rgba(128, 0, 128, 1);
+
+}
+
+/* resize ar image and font within */
+@media(min-width:560px){
+		.jumbotron p {
+			font-size: 500%;
+		}
+
+		p.big_title { 
+			font-size: 300%;
+			top: 90%;
+			left: 50%;
+			transform: translate(-50%, -90%);
+			
+		}
+		.cd-fixed-bg {
+			min-height: 80%;
+		}
+
+}
+
+
+@media(min-width:768px){
+	p.big_title { 
+		font-size: 500%;
+		top: 85%;
+		left: 50%;
+		transform: translate(-50%, -85%);
+		
+	}
+	.cd-fixed-bg {
+		min-height: 105%;
+	}
+	.cd-fixed-bg.cd-bg-1 {
+		background-image: url("organ.jpg");
+	}
+}
+
+@media(min-width:1100px){
+		p.big_title { 
+		
+			top: 80%;
+			left: 50%;
+			transform: translate(-50%, -80%);
+		
+		}
+		.jumbotron {
+			margin-bottom: 20px;
+		}
+		.circle_image {
+			max-height: 500px;
+		}
+}
+
+footer.footer {
+	padding: 30px;
+	background-color: #777;
+	color: #333;
+
+}
+

@@ -1,34 +1,28 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
-
 {% block content %}
-
-	<div class="row">
-		<div class="col-xs-12">
+	<div class="cd-fixed-bg cd-bg-1 div-wrapper">
+		 <div class="container">
+			<div class='jumbotron'>
+				<p class='profile text-center'>Artist Profile</p>
+			</div>
+		</div>
+        <img alt="Circle content" class="circle_image img-responsive" src="{% static 'index.png' %}" />
+		<p class='big_title'>{{ artist.first_name }} {{ artist.last_name }}</p>
+	</div> 
+	<div class="container">
+		<div class="cd-scrolling-bg cd-color-2">
 			<div class="panel panel-warning">
-
-				<div class='panel-heading'>
-				
-				<img src="{% if artist.photo %} {{ artist.photo.url }}{% else %}{% static 'blank.png' %} {% endif %}" alt="{{ artist.first_name }}'s photo" class='img-thumbnail img-responsive pull-left' width='200'><h3>&nbsp;&nbsp;{{ artist.first_name }} {{ artist.last_name }} : Artist Info</h3></div>
-				
-				<div class='panel-body'>
-				<!--&nbsp;&nbsp;{{ player.name }} has guernsey number {{ player.number }} and he is a {{ player.position }}. -->
-				
-				
-				{% if artist.url %}&nbsp;&nbsp;{{ artist.first_name }}'s website is <a href='{{ artist.url }}'>{{ artist.url }}</a>{% else %}&nbsp;&nbsp;{{ artist.first_name }} hasn't uploaded a website yet.{% endif %}   
-				<table class="table table-bordered table-striped table-hover">
-						  	<thead>
-							<tr>
-							  <!--<th>Number</th><th>Name</th><th>Position</th><th>Games Played</th><th>Goals</th><th>Height</th><th>Weight</th>-->
-		    				</tr>	
-		  					</thead>
-		  					<tbody>	
-								<!--<tr><td>#{{ player.number }}</td><td> {{ player.name }}</td><td> {{ player.position }} </td><td> {{ player.games_played }} </td><td> {{ player.goals }} </td><td> {{ player.height }}cm </td><td> {{ player.weight }}kg </td></tr> -->
-							</tbody>
-						</table>
-				
-				</div> <!-- end panel body -->	
-        	</div> <!-- end panel -->
-		</div> <!-- end column -->
-	</div> <!-- end row -->	
+				<img src="{% if artist.photo %} {{ artist.photo.url }}{% else %}{% static 'blank.png' %} {% endif %}" alt="{{ artist.first_name }}'s photo" class='img-thumbnail img-responsive pull-left' width='150'>
+        		<div class="panel-heading">&nbsp;&nbsp;{{ artist.first_name }}'s Info</div>
+				<div class="panel-body"><strong>&nbsp;&nbsp;{% if artist.url %}{{ artist.first_name }}'s website is <a href='{{ artist.url }}'>{{ artist.url }}</a></strong> <br>&nbsp;&nbsp;<a href="{{ artist.url }}">Click here</a> to visit the page.{% else %}&nbsp;&nbsp;{{ artist.first_name }} hasn't uploaded a website yet.{% endif %}</strong>
+			</div>
+    	</div>
+		<p>This is more information about {{ artist.first_name }} {{ artist.last_name }}. 
+		Maybe a short bio or description stored in the DB; uploaded by {{ artist.first_name }}, of course. 
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore incidunt suscipit similique, 
+		dolor corrupti cumque qui consectetur autem laborum fuga quas ipsam doloribus sequi...
+		</p>
+	</div> 
+</div> 
 {% endblock content %}
